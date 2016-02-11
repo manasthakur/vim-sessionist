@@ -20,14 +20,14 @@ Vim supports sessions!! This means you can create project-specific workspaces (l
 ## Installation (with [Vundle](https://github.com/VundleVim/Vundle.vim))
 
 * Add the following line to your `.vimrc`:
-```
-Plugin 'manasthakur/VimSessionist'
-```
+    ```
+    Plugin 'manasthakur/VimSessionist'
+    ```
 
 * Install plugin inside vim:
-```
-:PluginInstall
-```
+    ```
+    :PluginInstall
+    ```
 
 * Access the help file by typing `:help VimSessionist` in vim.
 
@@ -40,31 +40,31 @@ Installation with other plugin managers (such as [pathogen](https://github.com/t
 Installation with a plugin manager is easier; however, the steps for manual installation are as follows:
 
 * Clone this repository
-```
-git clone https://github.com/manasthakur/VimSessionist.git
-```
+    ```
+    git clone https://github.com/manasthakur/VimSessionist.git
+    ```
 
 * Move VimSessionist to the vim bundle directory
-```
-mv VimSessionist ~/.vim/bundle/
-```
+    ```
+    mv VimSessionist ~/.vim/bundle/
+    ```
 (NOTE: Create `.bundle` directory if it does not exist.)
 
 * Add the following lines to your `.vimrc`:
-```
-source ~/.vim/bundle/VimSessionist/autoload/VimSessionist.vim
-source ~/.vim/bundle/VimSessionist/plugin/VimSessionist.vim
-```
+    ```
+    source ~/.vim/bundle/VimSessionist/autoload/VimSessionist.vim
+    source ~/.vim/bundle/VimSessionist/plugin/VimSessionist.vim
+    ```
 
 * To integrate VimSessionist's documentation into vim:
     - Copy the documentation file to `.vim/doc` (create if does not exist):
-    ```
-    cp ~/.vim/bundle/VimSessionist/doc/VimSessionist.txt ~/.vim/doc/
-    ```
+        ```
+        cp ~/.vim/bundle/VimSessionist/doc/VimSessionist.txt ~/.vim/doc/
+        ```
     - Add the following line to your `.vimrc`:
-    ```
-    helptags ~/.vim/doc
-    ```
+        ```
+        helptags ~/.vim/doc
+        ```
 
 * To update VimSessionist, perform all the above steps again. (Another reason to use a plugin manager!)
 
