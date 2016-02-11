@@ -6,9 +6,9 @@
 
 Help on using VimSessionist                                   *VimSessionist*
 
-1. Introduction                         |VimSessionist-intro|
-2. Features		                        |VimSessionist-features|
-3. Frequently Asked Questions           |VimSessionist-faq|
+1. Introduction                                 |VimSessionist-intro|
+2. Features	                                    |VimSessionist-features|
+3. Frequently Asked Questions	                |VimSessionist-faq|
 
 ===============================================================================
  1. INTRODUCTION                                         *VimSessionist-intro*
@@ -57,7 +57,7 @@ previous session.
 4. How can I save the current session with its existing name?         
 
 Currently, this is not supported. However, keep checking for newer releases of
-VimSessionist to get this ad many other features.
+VimSessionist to get this and many other features.
 
 ------------------------------------------------------------------------------=
 
