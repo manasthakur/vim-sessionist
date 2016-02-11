@@ -17,7 +17,7 @@ Vim supports sessions!! This means you can create project-specific workspaces (l
 * You need vim with a version 7.3 or higher to use this wrapper without any errors.
 * Use the commands in Normal mode without pressing "Enter".
 
-## Installation (with [Vundle](https://github.com/VundleVim/Vundle.vim))
+## Installation (using [Vundle](https://github.com/VundleVim/Vundle.vim))
 
 * Add the following line to your `.vimrc`:
     ```
@@ -37,8 +37,6 @@ Installation with other plugin managers (such as [pathogen](https://github.com/t
 
 ## Installation (manual):
 
-Installation with a plugin manager is easier; however, the steps for manual installation are as follows:
-
 * Clone this repository
     ```
     git clone https://github.com/manasthakur/VimSessionist.git
@@ -57,11 +55,15 @@ Installation with a plugin manager is easier; however, the steps for manual inst
     ```
 
 * To integrate VimSessionist's documentation into vim:
+
     - Copy the documentation file to `.vim/doc` (create if does not exist):
+        
         ```
         cp ~/.vim/bundle/VimSessionist/doc/VimSessionist.txt ~/.vim/doc/
         ```
+
     - Add the following line to your `.vimrc`:
+        
         ```
         helptags ~/.vim/doc
         ```
