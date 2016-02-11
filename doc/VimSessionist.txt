@@ -50,9 +50,8 @@ All VimSessionist commands work in normal mode.
 3. Previous session is not restored on my system OR The command SP does not
 work.   
 
-Automatic saving of sessions on quitting vim is supported only by vim versions
-7.3+. So you need to upgrade your vim to be able to be able to restore the 
-previous session.
+Automatically saving sessions on quitting vim is supported only by vim 7.3+.
+So you need to upgrade your vim to be able to restore the previous session.
 
 4. How can I save the current session with its existing name?         
 
