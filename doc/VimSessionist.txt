@@ -1,0 +1,63 @@
+*VimSessionist.txt*    Simple session-management for powerful vim users.
+
+
+                        VIM REFERENCE MANUAL    by Manas Thakur
+
+
+Help on using VimSessionist                                   *VimSessionist*
+
+1. Introduction                         |VimSessionist-intro|
+2. Features		                        |VimSessionist-features|
+3. Frequently Asked Questions           |VimSessionist-faq|
+
+==============================================================================
+ 1. INTRODUCTION                                         *VimSessionist-intro*
+
+Vim supports sessions!! This means you can create project-specific workspaces 
+(like IDEs), and open the saved workspaces directly. A session encompasses all
+open files, the cursor-location within them, and other vim-options set while 
+creating the session.
+
+`VimSessionist` is a wrapper over the session-management commands in vim. It 
+also automatically saves your last session.
+
+==============================================================================
+ 2. FEATURES                                             *VimSessionist-features*
+
+* Save a vim session (Command: SS)
+* Open a vim session (Command: SO) -- with TAB-completion support
+* Restore previous session (Command: SP) -- automatically saved
+* List existing sessions (Command: SL)
+* Delete existing sessions (Command: SD)
+
+VimSessionist stores session files inside the directory `~/.vim-sessions`.
+
+==============================================================================
+ 3. FREQUENTLY ASKED QUESTIONS                             *VimSessionist-faq*
+
+1. Why a new session manager?                           
+
+Most of the existing session managers for vim (available on vimawesome.com) 
+are resource-heavy and increase the vim startup time significantly. 
+VimSessionist is just a wrapper over the existing session management capability
+of vim (i.e., written purely in vimscript), autoloads features as and when 
+required, and hence does not cause any noticeable performance lag.
+
+2. In which mode should I enter VimSessionist commands?                          
+
+All VimSessionist commands work in normal mode.
+
+3. Previous session is not restored on my system OR The command SP does not
+work.   
+
+Automatic saving of sessions on quitting vim is supported only by vim versions
+7.3+. So you need to upgrade your vim to be able to be able to restore the 
+previous session.
+
+4. How can I save the current session with its existing name?         
+
+Currently, this is not supported. However, keep checking for newer releases of
+VimSessionist to get this ad many other features.
+
+------------------------------------------------------------------------------
+
