@@ -68,7 +68,11 @@ Installation with other plugin managers (such as [pathogen](https://github.com/t
         helptags ~/.vim/doc
         ```
 
-* To update VimSessionist, perform all the above steps again. (Another reason to use a plugin manager!)
+* To update VimSessionist, just pull the repository again:
+    ```
+    cd ~/.vim/bundle/VimSessionist
+    git pull
+    ```
 
 Feel free to ping me for any queries/suggestions.
 
