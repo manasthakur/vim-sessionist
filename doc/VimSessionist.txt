@@ -30,7 +30,7 @@ also automatically saves your last session.
 * List existing sessions (Command: SL)
 * Delete existing sessions (Command: SD)
 
-VimSessionist stores session files inside the directory `~/.vim-sessions`.
+VimSessionist stores session files inside the directory `$HOME/.vim-sessions`.
 
 ===============================================================================
  3. FREQUENTLY ASKED QUESTIONS                             *VimSessionist-faq*

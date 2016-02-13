@@ -5,8 +5,8 @@ endif
 let g:loaded_VimSessionist = 1
 
 " Create directory to store sessions
-if !isdirectory("~/.vim-sessions")
-    silent call mkdir("~/.vim-sessions", "p")
+if !isdirectory("$HOME/.vim-sessions")
+    silent call mkdir("$HOME/.vim-sessions", "p")
 endif
 
 " Call AutoSave() on quitting Vim (for vim versions >= 7.3)
@@ -35,5 +35,5 @@ if v:version >= 703
 endif
 
 " Integrate the documentation
-helptags ~/.vim/bundle/VimSessionist/doc/
+helptags $HOME/.vim/bundle/VimSessionist/doc/
 

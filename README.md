@@ -44,14 +44,14 @@ Installation with other plugin managers (such as [pathogen](https://github.com/t
 
 * Move VimSessionist to the vim bundle directory
     ```
-    mv VimSessionist ~/.vim/bundle/
+    mv VimSessionist $HOME/.vim/bundle/
     ```
 (NOTE: Create `.bundle` directory if it does not exist.)
 
 * Add the following lines to your `.vimrc`:
     ```
-    source ~/.vim/bundle/VimSessionist/autoload/VimSessionist.vim
-    source ~/.vim/bundle/VimSessionist/plugin/VimSessionist.vim
+    source $HOME/.vim/bundle/VimSessionist/autoload/VimSessionist.vim
+    source $HOME/.vim/bundle/VimSessionist/plugin/VimSessionist.vim
     ```
 
 * To integrate VimSessionist's documentation into vim:
@@ -59,18 +59,18 @@ Installation with other plugin managers (such as [pathogen](https://github.com/t
     - Copy the documentation file to `.vim/doc` (create if does not exist):
         
         ```
-        cp ~/.vim/bundle/VimSessionist/doc/VimSessionist.txt ~/.vim/doc/
+        cp $HOME/.vim/bundle/VimSessionist/doc/VimSessionist.txt $HOME/.vim/doc/
         ```
 
     - Add the following line to your `.vimrc`:
         
         ```
-        helptags ~/.vim/doc
+        helptags $HOME/.vim/doc
         ```
 
 * To update VimSessionist, just pull the repository again:
     ```
-    cd ~/.vim/bundle/VimSessionist
+    cd $HOME/.vim/bundle/VimSessionist
     git pull
     ```
 
