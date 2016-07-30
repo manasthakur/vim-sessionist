@@ -35,5 +35,5 @@ if v:version >= 703
 endif
 
 " Integrate the documentation
-helptags $HOME/.vim/bundle/VimSessionist/doc/
+" helptags $HOME/.vim/bundle/VimSessionist/doc/
 
