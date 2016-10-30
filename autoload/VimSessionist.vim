@@ -7,7 +7,8 @@ endfunction
 " List existing sessions
 function! VimSessionist#ListSessions()
     " execute "!basename `ls $HOME/.vim-sessions/*.session`"
-    call ctrlp#init()
+    return split(system("basename `ls $HOME/.vim_sessions/*.session`"), "\n")
+    " call ctrlp#init()
 endfunction
 
 function! ctrlp#init()
