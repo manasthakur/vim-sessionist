@@ -17,8 +17,6 @@ augroup VST
 	endif
 augroup END
 
-nnoremap SC :call ctrlp#init(ctrlp#obsession#id())
-
 " Use SO to open session
 nnoremap SO :source $HOME/.vim-sessions/
 
