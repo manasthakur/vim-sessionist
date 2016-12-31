@@ -1,8 +1,8 @@
-# VimSessionist
+# vim-sessionist
 
 Vim supports sessions!! This means you can create project-specific workspaces (like IDEs), and open the saved workspaces directly. A session encompasses all open files, the cursor-location within them, and other vim-options set while creating the session.
 
-`VimSessionist` is a light-weight wrapper over the session-management commands in vim. It also automatically saves your last session.
+`vim-sessionist` is a light-weight wrapper over the session-management commands in vim. It also automatically saves your last session.
 
 ## Features:
 
@@ -21,7 +21,7 @@ Vim supports sessions!! This means you can create project-specific workspaces (l
 
 * Add the following line to your `.vimrc`:
     ```
-    Plug 'manasthakur/VimSessionist'
+    Plug 'manasthakur/vim-sessionist'
     ```
 
 * Install plugin inside vim:
@@ -29,15 +29,15 @@ Vim supports sessions!! This means you can create project-specific workspaces (l
     :PlugInstall
     ```
 
-* Access the help file by typing `:help VimSessionist` in vim.
+* Access the help file by typing `:help vim-sessionist` in vim.
 
-* To update VimSessionist, run `:PlugUpdate VimSessionist` inside vim.
+* To update vim-sessionist, run `:PlugUpdate vim-sessionist` inside vim.
 
 ## Installation (using [Vundle](https://github.com/VundleVim/Vundle.vim))
 
 * Add the following line to your `.vimrc`:
     ```
-    Plugin 'manasthakur/VimSessionist'
+    Plugin 'manasthakur/vim-sessionist'
     ```
 
 * Install plugin inside vim:
@@ -45,9 +45,9 @@ Vim supports sessions!! This means you can create project-specific workspaces (l
     :PluginInstall
     ```
 
-* Access the help file by typing `:help VimSessionist` in vim.
+* Access the help file by typing `:help vim-sessionist` in vim.
 
-* To update VimSessionist, run `:PluginUpdate VimSessionist` inside vim.
+* To update vim-sessionist, run `:PluginUpdate vim-sessionist` inside vim.
 
 ## Installation (using [pathogen](https://github.com/tpope/vim-pathogen))
 
@@ -58,9 +58,9 @@ Vim supports sessions!! This means you can create project-specific workspaces (l
     git clone https://github.com/manasthakur/vimsessionist.git
     ```
 
-* Access the help file by typing `:help VimSessionist` in vim.
+* Access the help file by typing `:help vim-sessionist` in vim.
 
-* To update VimSessionist, run `git pull` inside the directory `~/.vim/bundle/VimSessionist`.
+* To update vim-sessionist, run `git pull` inside the directory `~/.vim/bundle/vim-sessionist`.
 
 Installation with other plugin managers (such as [NeoBundle](https://github.com/Shougo/neobundle.vim)) should also work in the standard way.
 
@@ -68,27 +68,27 @@ Installation with other plugin managers (such as [NeoBundle](https://github.com/
 
 * Clone this repository
     ```
-    git clone https://github.com/manasthakur/VimSessionist.git
+    git clone https://github.com/manasthakur/vim-sessionist.git
     ```
 
-* Move VimSessionist to the vim bundle directory
+* Move vim-sessionist to the vim bundle directory
     ```
-    mv VimSessionist $HOME/.vim/bundle/
+    mv vim-sessionist $HOME/.vim/bundle/
     ```
 (NOTE: Create `.bundle` directory if it does not exist.)
 
 * Add the following lines to your `.vimrc`:
     ```
-    source $HOME/.vim/bundle/VimSessionist/autoload/VimSessionist.vim
-    source $HOME/.vim/bundle/VimSessionist/plugin/VimSessionist.vim
+    source $HOME/.vim/bundle/vim-sessionist/autoload/vim-sessionist.vim
+    source $HOME/.vim/bundle/vim-sessionist/plugin/vim-sessionist.vim
     ```
 
-* To integrate VimSessionist's documentation into vim:
+* To integrate vim-sessionist's documentation into vim:
 
     - Copy the documentation file to `.vim/doc` (create if does not exist):
         
         ```
-        cp $HOME/.vim/bundle/VimSessionist/doc/VimSessionist.txt $HOME/.vim/doc/
+        cp $HOME/.vim/bundle/vim-sessionist/doc/vim-sessionist.txt $HOME/.vim/doc/
         ```
 
     - Add the following line to your `.vimrc`:
@@ -97,9 +97,9 @@ Installation with other plugin managers (such as [NeoBundle](https://github.com/
         helptags $HOME/.vim/doc
         ```
 
-* To update VimSessionist, just pull the repository again:
+* To update vim-sessionist, just pull the repository again:
     ```
-    cd $HOME/.vim/bundle/VimSessionist
+    cd $HOME/.vim/bundle/vim-sessionist
     git pull
     ```
 
