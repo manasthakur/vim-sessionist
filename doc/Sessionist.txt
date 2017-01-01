@@ -130,7 +130,7 @@ session. In order to avoid these problems, add the following line to your vimrc:
 * Added a function to return name of current session.
 * Made the directory to store sessions a variable.
 * Added variables to alter the commands for everything.
-* Added information id the documentation about disabling saving options.
+* Added information in the documentation about disabling saving options.
 
 ------------------------------------------------------------------------------=
 
