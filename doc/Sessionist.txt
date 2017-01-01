@@ -6,8 +6,6 @@ CONTENTS                                                  *Sessionist-contents*
 1. Introduction                                 |Sessionist-intro|
 2. Usage	                                    |Sessionist-usage|
 3. Configuration                                |Sessionist-config|
-      3.1 |g:scratch_width|
-      3.2 |g:scratchpad_file|
 4. Frequently Asked Questions	                |Sessionist-faq|
 5. Changes in version 2.0	                	|Sessionist-v2.0|
 
