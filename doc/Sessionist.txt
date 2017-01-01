@@ -1,7 +1,7 @@
-*Sessionist.txt*    											Version 2.0
+*Sessionist*    											Version 2.0
 
 ==============================================================================
-CONTENTS                                                  *ScratchpadContents*
+CONTENTS                                                  *Sessionist-contents*
 
 1. Introduction                                 |Sessionist-intro|
 2. Usage	                                    |Sessionist-usage|
