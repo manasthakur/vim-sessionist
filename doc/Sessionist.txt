@@ -1,17 +1,18 @@
-*Sessionist.txt*    Simple session-management for powerful vim users.
+*Sessionist.txt*    											Version 2.0
 
-
-                        VIM REFERENCE MANUAL    by Manas Thakur
-
-
-Help on using vim-sessionist                                   *Sessionist*
+==============================================================================
+CONTENTS                                                  *ScratchpadContents*
 
 1. Introduction                                 |Sessionist-intro|
-2. Features	                                    |Sessionist-features|
-3. Frequently Asked Questions	                |Sessionist-faq|
+2. Usage	                                    |Sessionist-usage|
+3. Configuration                                |Sessionist-config|
+      3.1 |g:scratch_width|
+      3.2 |g:scratchpad_file|
+4. Frequently Asked Questions	                |Sessionist-faq|
+5. Changes in version 2.0	                	|Sessionist-v2.0|
 
 ===============================================================================
- 1. INTRODUCTION                                         *Sessionist-intro*
+1. INTRODUCTION                                         *Sessionist-intro*
 
 Vim supports sessions!! This means you can create project-specific workspaces 
 (like IDEs), and open the saved workspaces directly. A session encompasses all
@@ -22,18 +23,81 @@ creating the session.
 also automatically saves your last session.
 
 ===============================================================================
- 2. FEATURES                                          *Sessionist-features*
+2. USAGE                                                *Sessionist-usage*
 
-* Save a vim session (Command: SS)
-* Open a vim session (Command: SO) -- with TAB-completion support
-* Restore previous session (Command: SP) -- automatically saved
-* List existing sessions (Command: SL)
-* Delete existing sessions (Command: SD)
 
-vim-sessionist stores session files inside the directory `$HOME/.vim-sessions`.
+Type the following commands in normal mode:
+
+* Create a new session: SN
+* Overwrite current session: SS
+* Open a session: SO
+* Restore previous session: SP (requires Vim 7.4+)
+* Get name of current session: SC
+* List existing sessions: SL
+* Delete a session: SD
+
+
+================================================================================
+3. CONFIGURATION                                         *Sessionist-config*
+
+--------------------------------------------------------------------------------
+3.1 g:sessionist_directory                              *g:sessionist_directory*
+
+The directory to store session files.
+Default:
+	let g:sessionist_directory = $HOME . '/.vim-sessions'
+
+--------------------------------------------------------------------------------
+3.2 g:sessionist_new                                          *g:sessionist_new*
+
+Command to create a new session.
+Default:
+	let g:sessionist_new = 'SN'
+
+--------------------------------------------------------------------------------
+3.3 g:sessionist_save                                        *g:sessionist_save*
+
+Command to overwrite the existing session.
+Default:
+	let g:sessionist_save = 'SN'
+
+--------------------------------------------------------------------------------
+3.4 g:sessionist_current                                  *g:sessionist_current*
+
+Command to get the name of current session (if exists).
+Default:
+	let g:sessionist_current = 'SC'
+
+--------------------------------------------------------------------------------
+3.5 g:sessionist_previous                                *g:sessionist_previous*
+
+Command to restore the previous session (requires Vim 7.4+).
+Default:
+	let g:sessionist_previous = 'SP'
+
+--------------------------------------------------------------------------------
+3.6 g:sessionist_open                                        *g:sessionist_open*
+
+Command to open an existing session (supports tab-completion).
+Default:
+	let g:sessionist_open = 'SO'
+
+--------------------------------------------------------------------------------
+3.7 g:sessionist_list                                        *g:sessionist_list*
+
+Command to list existing sessions.
+Default:
+	let g:sessionist_list = 'SL'
+
+--------------------------------------------------------------------------------
+3.8 g:sessionist_delete                                    *g:sessionist_delete*
+
+Command to delete an existing session.
+Default:
+	let g:sessionist_delete = 'SD'
 
 ===============================================================================
- 3. FREQUENTLY ASKED QUESTIONS                             *Sessionist-faq*
+4. FREQUENTLY ASKED QUESTIONS                             *Sessionist-faq*
 
 1. Why a new session manager?                           
 
@@ -53,10 +117,22 @@ work.
 Automatically saving sessions on quitting vim is supported only by vim 7.3+.
 So you need to upgrade your vim to be able to restore the previous session.
 
-4. How can I save the current session with its existing name?         
+4. After opening a session, my highlights are weird OR some plugins do not work
+properly.
 
-Currently, this is not supported. However, keep checking for newer releases of
-vim-sessionist to get this and many other features.
+A session by default encompasses all the options set while editing your code.
+This may lead to a problem when you update your plugins before opening a new
+session. In order to avoid these problems, add the following line to your vimrc:
+	set sessionoptions-=options
+
+===============================================================================
+5. CHANGES IN VERSION 2.0 (January 1st, 2017)            *Sessionist-v2.0*
+
+* Enabled overwriting of current session.
+* Added a function to return name of current session.
+* Made the directory to store sessions a variable.
+* Added variables to alter the commands for everything.
+* Added information id the documentation about disabling saving options.
 
 ------------------------------------------------------------------------------=
 
