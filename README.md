@@ -79,7 +79,7 @@ Installation with other plugin managers (such as [Vundle](https://github.com/Vun
     git pull
     ```
 
-[Star this repository](https://github.com/manasthakur/learn-vim/) on GitHub if you like the tutorial.
+[Star this repository](https://github.com/manasthakur/vim-sessionist/) on GitHub if you like the tutorial.
 Feel free to send bricks and bouquets to `manasthakur17@gmail.com`.
 
 ## License
