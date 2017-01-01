@@ -33,11 +33,11 @@ endfunction
 
 " Source previous session
 function! Sessionist#PreviousSession()
-if v:version >= 703
-	execute "source " . g:sessionist_directory . "/prev.session"
-else
-	echo "Vim version 7.4+ required to support this feature."
-endif
+	if v:version >= 703
+		execute "source " . g:sessionist_directory . "/prev.session"
+	else
+		echo "Vim version 7.3+ required to support this feature."
+	endif
 endfunction
 
 " Automatically save existing session on quitting Vim (overwrites previous one)
@@ -45,6 +45,6 @@ function! Sessionist#AutoSave()
 	if exists("g:current_session")
 		execute "mksession! " . g:sessionist_directory . "/" . g:current_session . ".session"
 	endif
-    execute "mksession! " . g:sessionist_directory . "/prev.session"
+	execute "mksession! " . g:sessionist_directory . "/prev.session"
 endfunction
 

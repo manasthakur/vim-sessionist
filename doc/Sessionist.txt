@@ -69,7 +69,7 @@ Default:
 --------------------------------------------------------------------------------
 3.5 g:sessionist_previous                                *g:sessionist_previous*
 
-Command to restore the previous session (requires Vim 7.4+).
+Command to restore the previous session (requires Vim 7.3+).
 Default:
 	let g:sessionist_previous = 'SP'
 

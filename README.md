@@ -16,7 +16,7 @@ Type the following commands in normal mode:
 * Create a new session: SN
 * Overwrite current session: SS
 * Open a session: SO
-* Restore previous session: SP (requires Vim 7.4+)
+* Restore previous session: SP (requires Vim 7.3+)
 * Get name of current session: SC
 * List existing sessions: SL
 * Delete a session: SD

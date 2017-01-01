@@ -2,7 +2,7 @@
 
 " Exit if Sessionist is already loaded
 if exists("g:loaded_Sessionist")
-    finish
+	finish
 endif
 let g:loaded_Sessionist = 1
 
@@ -12,14 +12,14 @@ endif
 
 " Create directory to store sessions
 if !isdirectory(g:sessionist_directory)
-    silent call mkdir(g:sessionist_directory, "p")
+	silent call mkdir(g:sessionist_directory, "p")
 endif
 
 " Call AutoSave() on quitting Vim (for vim versions >= 7.3)
 augroup Sessionist
-    if v:version >= 703
-        autocmd!
-    	autocmd QuitPre * call Sessionist#AutoSave()
+	if v:version >= 703
+		autocmd!
+		autocmd QuitPre * call Sessionist#AutoSave()
 	endif
 augroup END
 
