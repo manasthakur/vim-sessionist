@@ -42,9 +42,6 @@ endfunction
 
 " Automatically save existing session on quitting Vim (overwrites previous one)
 function! Sessionist#AutoSave()
-	if exists("g:current_session")
-		execute "mksession! " . g:sessionist_directory . "/" . g:current_session . ".session"
-	endif
 	execute "mksession! " . g:sessionist_directory . "/prev.session"
 endfunction
 
