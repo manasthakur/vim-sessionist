@@ -45,3 +45,4 @@ function! Sessionist#AutoSave()
 	execute "mksession! " . g:sessionist_directory . "/prev.session"
 endfunction
 
+" vim: tabstop=2

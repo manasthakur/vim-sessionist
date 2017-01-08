@@ -76,3 +76,4 @@ execute 'nnoremap' g:sessionist_list ':!ls ' . g:sessionist_directory . '<CR>'
 "" Delete session
 execute 'nnoremap' g:sessionist_delete ':!rm ' . g:sessionist_directory . '/'
 
+" vim: tabstop=2
