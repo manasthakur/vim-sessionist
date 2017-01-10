@@ -7,7 +7,7 @@ endif
 let g:loaded_Sessionist = 1
 
 if !exists("g:sessionist_directory")
-	let g:sessionist_directory = $HOME . '/.vim-sessions'
+	let g:sessionist_directory = $HOME . '/.vim/.sessions'
 endif
 
 " Create directory to store sessions

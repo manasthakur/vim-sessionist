@@ -43,7 +43,7 @@ Type the following commands in normal mode:
 
 The directory to store session files.
 Default:
-	let g:sessionist_directory = $HOME . '/.vim-sessions'
+	let g:sessionist_directory = $HOME . '/.vim/.vim-sessions'
 
 --------------------------------------------------------------------------------
 3.2 g:sessionist_new                                          *g:sessionist_new*
