@@ -68,7 +68,7 @@ execute 'nnoremap' g:sessionist_current ':call Sessionist#CurrentSession()<CR>'
 execute 'nnoremap' g:sessionist_previous ':call Sessionist#PreviousSession()<CR>'
 
 "" Open session
-execute 'nnoremap' g:sessionist_open ':source ' . g:sessionist_directory . '/'
+execute 'nnoremap' g:sessionist_open ':call Sessionist#OpenSession()<CR>'
 
 "" List sessions
 execute 'nnoremap' g:sessionist_list ':!ls ' . g:sessionist_directory . '<CR>'

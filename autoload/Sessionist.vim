@@ -45,4 +45,15 @@ function! Sessionist#AutoSave()
 	execute "mksession! " . g:sessionist_directory . "/prev.session"
 endfunction
 
+function! Sessionist#OpenSession()
+	let session_name = input("Enter session-name: ", g:sessionist_directory . "/", "file")
+	if !empty(session_name)
+		execute "source " . session_name
+		" Strip session name out of path and remove extension
+		let g:current_session = substitute(session_name, '.*\/\(\w\+\)\.session$', '\1', 'g')
+	else
+		echo "Empty name entered; not opening session."
+	endif
+endfunction
+
 " vim: tabstop=2
