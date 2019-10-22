@@ -50,7 +50,7 @@ function! Sessionist#OpenSession()
 	if !empty(session_name)
 		execute "source " . session_name
 		" Strip session name out of path and remove extension
-		let g:current_session = substitute(session_name, '.*\/\(\w\+\)\.session$', '\1', 'g')
+		let g:current_session = substitute(session_name, '.*\/\(\f\+\)\.session$', '\1', 'g')
 	else
 		echo "Empty name entered; not opening session."
 	endif
