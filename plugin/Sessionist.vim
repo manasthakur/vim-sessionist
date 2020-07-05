@@ -15,6 +15,12 @@ if !isdirectory(g:sessionist_directory)
 	silent call mkdir(g:sessionist_directory, "p")
 endif
 
+" Recognise natively loaded sessions
+if exists("v:this_session")
+	let g:current_session_path = v:this_session
+	call Sessionist#SetSessionName()
+endif
+
 " Call AutoSave() on quitting Vim (for vim versions >= 7.3)
 augroup Sessionist
 	if v:version >= 703
