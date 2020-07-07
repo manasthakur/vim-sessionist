@@ -104,4 +104,12 @@ function! Sessionist#AutoSave()
 	execute "mksession! " . g:sessionist_directory . "/prev.session"
 endfunction
 
+" Recognise loaded session's path
+function! Sessionist#NativeSessionLoad()
+	if exists("v:this_session")
+		let g:current_session_path = v:this_session
+		call Sessionist#SetSessionName()
+	endif
+endfunction
+
 " vim: tabstop=2
