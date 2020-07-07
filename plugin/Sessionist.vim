@@ -77,7 +77,7 @@ execute 'nnoremap' g:sessionist_previous ':call Sessionist#PreviousSession()<CR>
 execute 'nnoremap' g:sessionist_open ':call Sessionist#OpenSession()<CR>'
 
 "" List sessions
-execute 'nnoremap' g:sessionist_list ':!ls ' . g:sessionist_directory . '<CR>'
+execute 'nnoremap' g:sessionist_list ':call Sessionist#ListSessions()<CR>'
 
 "" Delete session
 execute 'nnoremap' g:sessionist_delete ':!rm ' . g:sessionist_directory . '/'

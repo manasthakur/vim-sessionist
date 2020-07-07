@@ -15,30 +15,46 @@ function! Sessionist#SetSessionPath()
 	endif
 endfunction
 
-" Write session to file
-function! Sessionist#MakeSession()
-	if !exists("g:current_session_path")
-		call Sessionist#SetSessionPath()
-	endif
-	if !exists("g:current_session")
+" Name of current session
+function! Sessionist#CurrentSession()
+	if exists("g:current_session_path") && !exists("g:current_session")
 		call Sessionist#SetSessionName()
 	endif
 
-	execute "mksession! " . g:current_session_path
-	echo g:current_session . " <== Session saved!"
+	if exists("g:current_session")
+		echo g:current_session
+	else
+		echo "No session exists."
+	endif
+endfunction
+
+" List sessions in sessionist directory
+function! Sessionist#ListSessions()
+	let sessions = readdir(g:sessionist_directory, {n -> n =~ '.session$'})
+	for session in sessions
+		echo session
+	endfor
+endfunction
+
+" Write session to file
+function! Sessionist#MakeSession()
+	if !exists("g:current_session_path") || !exists("g:current_session")
+		echo "ERROR: unknown session"
+	else
+		execute "mksession! " . g:current_session_path
+		echo g:current_session . " <== Session saved!"
+	endif
 endfunction
 
 " Load session from file
 function! Sessionist#LoadSession()
-	if !exists("g:current_session_path")
-		call Sessionist#SetSessionPath()
-	endif
-	if !exists("g:current_session")
-		call Sessionist#SetSessionName()
+	if !exists("g:current_session_path") || !exists("g:current_session")
+		echo "ERROR: unknown session"
+	else
+		execute "source " . g:current_session_path
+		echo g:current_session . " <== Session loaded!"
 	endif
 
-	execute "source " . g:current_session_path
-	echo g:current_session . " <== Session loaded!"
 endfunction
 
 " Create new session by entering name
@@ -86,19 +102,6 @@ endfunction
 " Automatically save existing session on quitting Vim (overwrites previous one)
 function! Sessionist#AutoSave()
 	execute "mksession! " . g:sessionist_directory . "/prev.session"
-endfunction
-
-" Name of current session
-function! Sessionist#CurrentSession()
-	if exists("g:current_session_path") && !exists("g:current_session")
-		call Sessionist#SetSessionName()
-	endif
-
-	if exists("g:current_session")
-		echo g:current_session
-	else
-		echo "No session exists."
-	endif
 endfunction
 
 " vim: tabstop=2
