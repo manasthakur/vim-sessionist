@@ -29,7 +29,7 @@ Type the following commands in normal mode:
 * Create a new session: SN
 * Overwrite current session: SS
 * Open a session: SO
-* Restore previous session: SP (requires Vim 7.4+)
+* Restore previous session: SP (requires Vim 7.3+)
 * Get name of current session: SC
 * List existing sessions: SL
 * Delete a session: SD
@@ -43,7 +43,7 @@ Type the following commands in normal mode:
 
 The directory to store session files.
 Default:
-	let g:sessionist_directory = $HOME . '/.vim/.vim-sessions'
+	let g:sessionist_directory = $HOME . '/.vim/.sessions'
 
 --------------------------------------------------------------------------------
 3.2 g:sessionist_new                                          *g:sessionist_new*
@@ -57,7 +57,7 @@ Default:
 
 Command to overwrite the existing session.
 Default:
-	let g:sessionist_save = 'SN'
+	let g:sessionist_save = 'SS'
 
 --------------------------------------------------------------------------------
 3.4 g:sessionist_current                                  *g:sessionist_current*
@@ -83,7 +83,7 @@ Default:
 --------------------------------------------------------------------------------
 3.7 g:sessionist_list                                        *g:sessionist_list*
 
-Command to list existing sessions.
+Command to list existing sessions (in the sessionist directory).
 Default:
 	let g:sessionist_list = 'SL'
 
