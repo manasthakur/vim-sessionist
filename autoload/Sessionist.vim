@@ -90,6 +90,17 @@ function! Sessionist#OpenSession()
 	endif
 endfunction
 
+" Create new session by entering name
+function! Sessionist#DeleteSession()
+	let session_name = input("Delete session: ", g:sessionist_directory . "/", "file")
+	redraw
+	if !empty(session_name)
+		delete(session_name)
+	else
+		echo "Empty name entered; not deleting session."
+	endif
+endfunction
+
 " Source previous session
 function! Sessionist#PreviousSession()
 	if v:version >= 703
