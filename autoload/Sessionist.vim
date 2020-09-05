@@ -39,7 +39,7 @@ endfunction
 " Write session to file
 function! Sessionist#MakeSession()
 	if !exists("g:current_session_path") || !exists("g:current_session")
-		echo "ERROR: unknown session"
+		echoerr "ERROR: unknown session"
 	else
 		execute "mksession! " . g:current_session_path
 		echo g:current_session . " <== Session saved!"
@@ -49,7 +49,7 @@ endfunction
 " Load session from file
 function! Sessionist#LoadSession()
 	if !exists("g:current_session_path") || !exists("g:current_session")
-		echo "ERROR: unknown session"
+		echoerr "ERROR: unknown session"
 	else
 		execute "source " . g:current_session_path
 		echo g:current_session . " <== Session loaded!"
@@ -60,6 +60,7 @@ endfunction
 " Create new session by entering name
 function! Sessionist#NewSession()
 	let session_name = input('Enter session-name: ')
+	redraw
 	if !empty(session_name)
 		let g:current_session = session_name
 		call Sessionist#SetSessionPath()
@@ -81,6 +82,7 @@ endfunction
 " Open existing session
 function! Sessionist#OpenSession()
 	let session_name = input("Enter session-name: ", g:sessionist_directory . "/", "file")
+	redraw
 	if !empty(session_name)
 		let g:current_session_path = session_name
 		call Sessionist#SetSessionName()
@@ -90,7 +92,7 @@ function! Sessionist#OpenSession()
 	endif
 endfunction
 
-" Create new session by entering name
+" Delete session by entering name
 function! Sessionist#DeleteSession()
 	let session_name = input("Delete session: ", g:sessionist_directory . "/", "file")
 	redraw

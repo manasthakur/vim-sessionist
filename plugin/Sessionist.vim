@@ -27,6 +27,7 @@ augroup Sessionist
 	endif
 augroup END
 
+
 " Variables
 
 if !exists("g:sessionist_new")
@@ -37,16 +38,16 @@ if !exists("g:sessionist_save")
 	let g:sessionist_save = 'SS'
 endif
 
-if !exists("g:sessionist_current")
-	let g:sessionist_current = 'SC'
+if !exists("g:sessionist_open")
+	let g:sessionist_open = 'SO'
 endif
 
 if !exists("g:sessionist_previous")
 	let g:sessionist_previous = 'SP'
 endif
 
-if !exists("g:sessionist_open")
-	let g:sessionist_open = 'SO'
+if !exists("g:sessionist_current")
+	let g:sessionist_current = 'SC'
 endif
 
 if !exists("g:sessionist_list")
@@ -57,6 +58,7 @@ if !exists("g:sessionist_delete")
 	let g:sessionist_delete = 'SD'
 endif
 
+
 " Mappings
 
 "" Create new session
@@ -65,14 +67,14 @@ execute 'nnoremap' g:sessionist_new ':call Sessionist#NewSession()<CR>'
 "" Save existing session
 execute 'nnoremap' g:sessionist_save ':call Sessionist#SaveSession()<CR>'
 
-"" Get name of current session
-execute 'nnoremap' g:sessionist_current ':call Sessionist#CurrentSession()<CR>'
+"" Open session
+execute 'nnoremap' g:sessionist_open ':call Sessionist#OpenSession()<CR>'
 
 "" Restore previous session
 execute 'nnoremap' g:sessionist_previous ':call Sessionist#PreviousSession()<CR>'
 
-"" Open session
-execute 'nnoremap' g:sessionist_open ':call Sessionist#OpenSession()<CR>'
+"" Print name of current session
+execute 'nnoremap' g:sessionist_current ':call Sessionist#CurrentSession()<CR>'
 
 "" List sessions
 execute 'nnoremap' g:sessionist_list ':call Sessionist#ListSessions()<CR>'
