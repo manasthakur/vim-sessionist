@@ -1,12 +1,70 @@
 " Vim-Sessionist
 
+" Derive the session name from the session path
+function! Sessionist#SetSessionName()
+	if exists("g:current_session_path")
+		let g:current_session = substitute(g:current_session_path, '.*\/\(\f\+\)\.session$', '\1', 'g')
+	endif
+endfunction
+
+" Derive the session path from the session name
+function! Sessionist#SetSessionPath()
+	if exists("g:current_session")
+		" Strip session name out of path and remove extension
+		let g:current_session_path = g:sessionist_directory . "/" . g:current_session . ".session"
+	endif
+endfunction
+
+" Name of current session
+function! Sessionist#CurrentSession()
+	if exists("g:current_session_path") && !exists("g:current_session")
+		call Sessionist#SetSessionName()
+	endif
+
+	if exists("g:current_session")
+		echo g:current_session
+	else
+		echo "No session exists."
+	endif
+endfunction
+
+" List sessions in sessionist directory
+function! Sessionist#ListSessions()
+	let sessions = readdir(g:sessionist_directory, {n -> n =~ '.session$'})
+	for session in sessions
+		echo session
+	endfor
+endfunction
+
+" Write session to file
+function! Sessionist#MakeSession()
+	if !exists("g:current_session_path") || !exists("g:current_session")
+		echoerr "ERROR: unknown session"
+	else
+		execute "mksession! " . g:current_session_path
+		echo g:current_session . " <== Session saved!"
+	endif
+endfunction
+
+" Load session from file
+function! Sessionist#LoadSession()
+	if !exists("g:current_session_path") || !exists("g:current_session")
+		echoerr "ERROR: unknown session"
+	else
+		execute "source " . g:current_session_path
+		echo g:current_session . " <== Session loaded!"
+	endif
+
+endfunction
+
 " Create new session by entering name
 function! Sessionist#NewSession()
 	let session_name = input('Enter session-name: ')
+	redraw
 	if !empty(session_name)
 		let g:current_session = session_name
-		execute "mksession! " . g:sessionist_directory . "/" . session_name . ".session"
-		echo " <== Session saved!"
+		call Sessionist#SetSessionPath()
+		call Sessionist#MakeSession()
 	else
 		echo "Empty name entered; not saving session."
 	endif
@@ -14,20 +72,34 @@ endfunction
 
 " Save existing session
 function! Sessionist#SaveSession()
-	if exists("g:current_session")
-		execute "mksession! " . g:sessionist_directory . "/" . g:current_session . ".session"
-		echo g:current_session . " <== Session saved!"
-	else
+	if !exists("g:current_session") || !exists("g:current_session_path")
 		call Sessionist#NewSession()
+	else
+		call Sessionist#MakeSession()
 	endif
 endfunction
 
-" Name of current session
-function! Sessionist#CurrentSession()
-	if exists("g:current_session")
-		echo g:current_session
+" Open existing session
+function! Sessionist#OpenSession()
+	let session_name = input("Enter session-name: ", g:sessionist_directory . "/", "file")
+	redraw
+	if !empty(session_name)
+		let g:current_session_path = session_name
+		call Sessionist#SetSessionName()
+		call Sessionist#LoadSession()
 	else
-		echo "No session exists."
+		echo "Empty name entered; not opening session."
+	endif
+endfunction
+
+" Delete session by entering name
+function! Sessionist#DeleteSession()
+	let session_name = input("Delete session: ", g:sessionist_directory . "/", "file")
+	redraw
+	if !empty(session_name)
+		delete(session_name)
+	else
+		echo "Empty name entered; not deleting session."
 	endif
 endfunction
 
@@ -45,14 +117,11 @@ function! Sessionist#AutoSave()
 	execute "mksession! " . g:sessionist_directory . "/prev.session"
 endfunction
 
-function! Sessionist#OpenSession()
-	let session_name = input("Enter session-name: ", g:sessionist_directory . "/", "file")
-	if !empty(session_name)
-		execute "source " . session_name
-		" Strip session name out of path and remove extension
-		let g:current_session = substitute(session_name, '.*\/\(\f\+\)\.session$', '\1', 'g')
-	else
-		echo "Empty name entered; not opening session."
+" Recognise loaded session's path
+function! Sessionist#NativeSessionLoad()
+	if exists("v:this_session")
+		let g:current_session_path = v:this_session
+		call Sessionist#SetSessionName()
 	endif
 endfunction
 

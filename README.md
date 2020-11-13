@@ -6,7 +6,7 @@ open files, the cursor-location within them, and other vim-options set while
 creating the session.
 
 `vim-sessionist` is a light-weight wrapper over the session-management commands
-in vim. It also automatically saves your session, when you close Vim, and lets
+in vim. It also automatically saves your session when you close Vim, and lets
 you restore it later.
 
 ## Usage
